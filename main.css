@@ -20,99 +20,103 @@ body {
     overflow: hidden;
     text-align: center;
     margin: 0; 
+	
 }
 
-.p1:after {
-    animation: background1 120s infinite linear;
-    background: url('assets/background1.png') top left;
-    background-size: auto;
-    background-repeat: round;
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -10;
+.text-box {
+  font-family: papermariofont;
+  color: white; 
+  background-color: #6135f2; 
+  padding: 0px 20px 20px;
+  border-radius: 10px; 
+  opacity: 1;
+  margin: auto;
+  height: auto;
+  text-align: center;
 }
 
-.p2:after {
-    animation: background2 90s infinite linear;
-    background: url('assets/background2.png') top left;
-    background-size: auto 100%;
-    background-repeat: round;
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -10;
+.text-box h2 {
+    font-family: mariofont;
+	font-size: 40px;
 }
 
-.p3:after {
-    animation: background3 70s infinite linear;
-    background: url('assets/background3.png') top left;
-    background-size: auto 100%;
-    background-repeat: round;
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -10;
+.text-box p {
+	font-size: 20px;
+	margin: 0;
 }
 
-.p4:after {
-    animation: background4 40s infinite linear;
-    background: url('assets/background4.png') top left;
-    background-size: auto 100%;
-    background-repeat: round;
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -10;
+
+#about {
+    position: fixed;
+    top: 64%; 
+    left: 50%; 
+	transform: translate(-50%, -50%);
 }
 
-@keyframes background1 {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: -100vw 0;
-    }
+
+
+
+#bg_video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2;
+  opacity: 0.8;
 }
 
-@keyframes background2 {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: -100vw 0;
-    }
+.container {
+  overflow: hidden;
 }
 
-@keyframes background3 {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: -100vw 0;
-    }
+/* .sliding-background { */
+  /* background: url("assets/pattern2.png") repeat-x; */
+  /* height: 500px; */
+  /* width: 2400px;  */
+  /* position: fixed;  */
+  /* top: 0;  */
+  /* left: 0;  */
+  /* animation: slide 180s linear infinite; */
+  /* opacity: 0.5; */
+
+/* } */
+
+
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-800px, 0, 0); /* The image width */
+  }
 }
 
-@keyframes background4 {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: -100vw 0;
-    }
+/* .sliding-background { */
+  /* background: url("assets/pattern.png") repeat; */
+  /* height: 100vh;  */
+  /* width: 100vw;  */
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
+  /* animation: slide 60s linear infinite; */
+  /* opacity: 0.4;  */
+  /* z-index: -1;  */
+  /* background-size: 150%;  */
+/* } */
+
+
+@keyframes slide {
+  from {
+    background-position: 0 0; 
+  }
+  to {
+    background-position: 100% 0; 
+  }
 }
+
+
 
 body {
     display: grid;
@@ -121,11 +125,16 @@ body {
     margin: 0;
 }
 
+
 .logo {
     position: relative;
-    top: -90px;
+    top: -80px;
     opacity: 0;
     animation: slideInAndFadeIn 1.2s forwards, moveUpDown 3.8s 6s infinite ease-in-out;
+	width: 800px;
+	height: auto;
+	margin: 0 auto;
+	z-index: 1;
 }
 
 @keyframes slideInAndFadeIn {
@@ -151,85 +160,5 @@ body {
     }
 }
 
-.info1 {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-     width: 500px;
-    height: 700px;
-    background-image: url('assets/info1.png');
-    background-size: cover;
-    opacity: 0;
-    display: none;
-    transition: opacity 0.3s;
-	 z-index: 1000;
-	 pointer-events: none; /* Make the info boxes transparent to mouse events */
-}
-
-.info2 {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 700px;
-    background-image: url('assets/info2.png');
-    background-size: cover;
-    opacity: 0;
-    display: none;
-    transition: opacity 0.3s;
-	 z-index: 1000;
-	 pointer-events: none; /* Make the info boxes transparent to mouse events */
-}
 
 
-
-
-
-.dark-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
-    display: none; /* Hide initially */
-    opacity: 0; /* Start with 0 opacity */
-    transition: opacity 0.3s; /* Add the transition property for fade-in effect */
-    z-index: 999;
-}
-
-.image4 {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 100px;
-    display: none;
-    opacity: 0; /* Start with 0 opacity */
-    transition: opacity 0.3s, transform 0.3s, scale 0.3s; /* Add the transition property for fade-in and other effects */
-    z-index: 999;
-}
-
-.bottom-images {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.bottom-image {
-    width: 220px; 
-    height: 80px; 
-    margin: 0 10px; 
-    transition: transform 0.3s, scale 0.3s;
-}
-
-.bottom-image:hover {
-    transform: scale(1.2) rotate(5deg);
-    cursor: pointer;
-}
-
-.image4:hover {
-   transform: scale(1.2) rotate(5deg);
-    cursor: pointer;
-}
