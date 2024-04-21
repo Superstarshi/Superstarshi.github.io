@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Super Mario and the Rainbow Stars (demo)</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="main.css" />
+    <style>
+        @font-face { font-family: mariofont; src: url('assets/mariofont.TTF'); } 
+        @font-face { font-family: papermariofont; src: url('assets/papermariofont.TTF'); } 
+
+        h1 {
+            font-family: mariofont;
+        }
+
+        h2 {
+            font-family: papermariofont;
+        }
+
+        body {
+            overflow: hidden; /* Hide overflowing content */
+            text-align: center;
+            margin: 0; /* Remove default margin */
+        }
+
+.parallax-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200vw;
+    height: 100%;
+}
+
+.background-image {
+    background-size: 100% auto; /* Set the image to cover full width and maintain aspect ratio */
+    background-repeat: repeat; /* Allow the background image to repeat smoothly */
+    height: 100%;
+}
+
+
+        /* Animation for each background layer */
+        @keyframes scrollBackground1 {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-1000px); /* Adjust the value as needed for smooth scrolling */
+            }
+        }
+
+        @keyframes scrollBackground2 {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-666.66px); /* Adjust the value as needed for smooth scrolling */
+            }
+        }
+
+        @keyframes scrollBackground3 {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-500px); /* Adjust the value as needed for smooth scrolling */
+            }
+        }
+
+        @keyframes scrollBackground4 {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-840px); /* Adjust the value as needed for smooth scrolling */
+            }
+        }
+
+        /* Assign animation to each background layer */
+        .background-layer.layer1 {
+            animation: scrollBackground1 80s linear infinite; /* Adjust duration as needed */
+        }
+
+        .background-layer.layer2 {
+            animation: scrollBackground2 65s linear infinite; /* Adjust duration as needed */
+        }
+
+        .background-layer.layer3 {
+            animation: scrollBackground3 40s linear infinite; /* Adjust duration as needed */
+        }
+
+        .background-layer.layer4 {
+            animation: scrollBackground4 20s linear infinite; /* Adjust duration as needed */
+        }
+    </style>
+</head>
+    <h1>Super Mario</h1>
+    <h2>Paper Mario</h2>
+<body>
+    <div class="parallax-container">
+        <div class="background-layer layer1">
+            <div class="background-image" style="background-image: url('assets/background1.png');"></div>
+        </div>
+        <div class="background-layer layer2">
+            <div class="background-image" style="background-image: url('assets/background2.png');"></div>
+        </div>
+        <div class="background-layer layer3">
+            <div class="background-image" style="background-image: url('assets/background3.png');"></div>
+        </div>
+        <div class="background-layer layer4">
+            <div class="background-image" style="background-image: url('assets/background4.png');"></div>
+        </div>
+    </div>
+</body>
+</html>

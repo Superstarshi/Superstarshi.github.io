@@ -1,0 +1,235 @@
+@font-face {
+    font-family: mariofont;
+    src: url('assets/mariofont.TTF');
+}
+
+@font-face {
+    font-family: papermariofont;
+    src: url('assets/papermariofont.TTF');
+}
+
+h1 {
+    font-family: mariofont;
+}
+
+h2 {
+    font-family: papermariofont;
+}
+
+body {
+    overflow: hidden;
+    text-align: center;
+    margin: 0; 
+}
+
+.p1:after {
+    animation: background1 120s infinite linear;
+    background: url('assets/background1.png') top left;
+    background-size: auto;
+    background-repeat: round;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+.p2:after {
+    animation: background2 90s infinite linear;
+    background: url('assets/background2.png') top left;
+    background-size: auto 100%;
+    background-repeat: round;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+.p3:after {
+    animation: background3 70s infinite linear;
+    background: url('assets/background3.png') top left;
+    background-size: auto 100%;
+    background-repeat: round;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+.p4:after {
+    animation: background4 40s infinite linear;
+    background: url('assets/background4.png') top left;
+    background-size: auto 100%;
+    background-repeat: round;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+@keyframes background1 {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100vw 0;
+    }
+}
+
+@keyframes background2 {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100vw 0;
+    }
+}
+
+@keyframes background3 {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100vw 0;
+    }
+}
+
+@keyframes background4 {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100vw 0;
+    }
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: auto;
+    margin: 0;
+}
+
+.logo {
+    position: relative;
+    top: -90px;
+    opacity: 0;
+    animation: slideInAndFadeIn 1.2s forwards, moveUpDown 3.8s 6s infinite ease-in-out;
+}
+
+@keyframes slideInAndFadeIn {
+    0% {
+        top: -90px;
+        opacity: 0;
+    }
+    100% {
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes moveUpDown {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: -10px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+.info1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+     width: 500px;
+    height: 700px;
+    background-image: url('assets/info1.png');
+    background-size: cover;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.3s;
+	 z-index: 1000;
+	 pointer-events: none; /* Make the info boxes transparent to mouse events */
+}
+
+.info2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 700px;
+    background-image: url('assets/info2.png');
+    background-size: cover;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.3s;
+	 z-index: 1000;
+	 pointer-events: none; /* Make the info boxes transparent to mouse events */
+}
+
+
+
+
+
+.dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
+    display: none; /* Hide initially */
+    opacity: 0; /* Start with 0 opacity */
+    transition: opacity 0.3s; /* Add the transition property for fade-in effect */
+    z-index: 999;
+}
+
+.image4 {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 100px;
+    display: none;
+    opacity: 0; /* Start with 0 opacity */
+    transition: opacity 0.3s, transform 0.3s, scale 0.3s; /* Add the transition property for fade-in and other effects */
+    z-index: 999;
+}
+
+.bottom-images {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.bottom-image {
+    width: 220px; 
+    height: 80px; 
+    margin: 0 10px; 
+    transition: transform 0.3s, scale 0.3s;
+}
+
+.bottom-image:hover {
+    transform: scale(1.2) rotate(5deg);
+    cursor: pointer;
+}
+
+.image4:hover {
+   transform: scale(1.2) rotate(5deg);
+    cursor: pointer;
+}
