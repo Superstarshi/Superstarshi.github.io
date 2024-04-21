@@ -1,11 +1,11 @@
 @font-face {
     font-family: mariofont;
-    src: url('../Superstarshi.github.io/assets/mariofont.TTF');
+    src: url('../Superstarshi.github.io/assets/mariofont.TTF') format('truetype');
 }
 
 @font-face {
     font-family: papermariofont;
-    src: url('../Superstarshi.github.io/assets/papermariofont.TTF');
+    src: url('../Superstarshi.github.io/assets/papermariofont.TTF') format('truetype');
 }
 
 h1 {
