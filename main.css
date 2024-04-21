@@ -1,11 +1,11 @@
 @font-face {
     font-family: mariofont;
-    src: url('../assets/font/mariofont.TTF') format('truetype');
+    src: url('assets/font/mariofont.TTF') format('truetype');
 }
 
 @font-face {
     font-family: papermariofont;
-    src: url('../assets/font/papermariofont.TTF') format('truetype');
+    src: url('assets/font/papermariofont.TTF') format('truetype');
 }
 
 h1 {
