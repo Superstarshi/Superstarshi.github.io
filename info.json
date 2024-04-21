@@ -1,9 +1,0 @@
-{
-	"mainPage": "index.html",
-	"episodeIcon": "assets/icon.png",
-	
-	"allowPlayerSelection": false,	
-	"allowTwoPlayer": false,
-        "starIcon": "assets/star.png"
-
-}
