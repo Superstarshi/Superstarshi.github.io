@@ -24,7 +24,7 @@ body {
     /* overflow: hidden; */
     text-align: center;
     margin: 0px; 
-    padding: 0px; /* Remove padding to eliminate white space */
+    padding-bottom: 100px;
 }
 
 
