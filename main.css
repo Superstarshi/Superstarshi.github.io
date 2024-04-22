@@ -23,10 +23,10 @@ h2 {
 body {
     /* overflow: hidden; */
     text-align: center;
-    margin: 0; 
-	  padding: 100px;
-	
+    margin: 0px; 
+    padding: 0px; /* Remove padding to eliminate white space */
 }
+
 
 .text-box {
     font-family: papermariofont;
@@ -199,7 +199,7 @@ body {
 
 .logo {
     position: relative;
-    top: -80px;
+    top: -0px;
     opacity: 0;
     animation: slideInAndFadeIn 1.2s forwards, moveUpDown 3.8s 6s infinite ease-in-out;
 	width: 800px;
