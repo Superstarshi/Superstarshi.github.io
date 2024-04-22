@@ -21,22 +21,22 @@ h2 {
 }
 
 body {
-    overflow: hidden;
+    /* overflow: hidden; */
     text-align: center;
     margin: 0; 
-	
 }
 
 .text-box {
-  font-family: papermariofont;
-  color: white; 
-  background-color: #6135f2; 
-  padding: 0px 20px 20px;
-  border-radius: 10px; 
-  opacity: 1;
-  margin: auto;
-  height: auto;
-  text-align: center;
+    font-family: papermariofont;
+    color: white; 
+    background-color: #6135f2; 
+    padding: 0px 20px 20px;
+    border-radius: 10px; 
+    opacity: 1;
+    margin: auto;
+    height: auto;
+    text-align: center;
+    /* Remove position: fixed; */
 }
 
 .text-box h2 {
@@ -51,10 +51,17 @@ body {
 
 
 #about {
-    position: fixed;
-    top: 64%; 
-    left: 50%; 
-	transform: translate(-50%, -50%);
+    /* position: fixed; */
+    /* top: 540px; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+}
+
+#about2 {
+    /* position: fixed; */
+    /* top: 940px; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
 }
 
 
@@ -70,9 +77,13 @@ body {
   opacity: 1;
 }
 
+
+
 .container {
-  overflow: hidden;
+    height: 100vh; 
+    overflow: auto;
 }
+
 
 /* .sliding-background { */
   /* background: url("assets/pattern2.png") repeat-x; */
