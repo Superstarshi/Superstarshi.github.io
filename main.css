@@ -24,48 +24,57 @@ body {
     /* overflow: hidden; */
     text-align: center;
     margin: 0; 
+	  padding: 100px;
+	
 }
 
 .text-box {
     font-family: papermariofont;
     color: white; 
     background-color: #6135f2; 
-    padding: 0px 20px 20px;
+    padding: 20px;
     border-radius: 10px; 
     opacity: 1;
-    margin: auto;
-    height: auto;
-    text-align: center;
-    /* Remove position: fixed; */
+    margin-right: 80px; 
+    overflow-y: auto; 
+	
+}
+
+.text-box:last-child {
+    margin-right: 0; 
 }
 
 .text-box h2 {
     font-family: mariofont;
-	font-size: 40px;
+    font-size: 40px;
+    margin-top: 0;
+
 }
 
 .text-box p {
-	font-size: 20px;
-	margin: 0;
+    font-size: 20px;
+    margin: 0;
 }
 
 
-#about {
-    /* position: fixed; */
-    /* top: 540px; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
+#about, #story {
+    width: 600px; 
+	margin-top: 60px;
+
 }
 
-#about2 {
-    /* position: fixed; */
-    /* top: 940px; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
+#trailer, #downloads {
+    width: 600px; 
+	margin-top: 60px;
+
 }
 
-
-
+#screenshots {
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+	margin-top: 60px;
+}
 
 #bg_video {
   position: fixed;
@@ -77,12 +86,59 @@ body {
   opacity: 1;
 }
 
-
-
 .container {
-    height: 100vh; 
-    overflow: auto;
+    display: flex;
+    justify-content: space-around; 
 }
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; 
+}
+
+.gallery {
+    width: 280px;
+    transition: transform 0.5s;
+    margin: 20px; 
+}
+
+.gallery:hover {
+    transform: scale(1.2) rotate(2deg);
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #6135f2; 
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-family: papermariofont;
+    box-sizing: border-box; 
+}
+
+
+body {
+    position: relative; 
+    margin: 0px;
+}
+
+
 
 
 /* .sliding-background { */
