@@ -6,6 +6,13 @@
 }
 
 @font-face {
+    font-family: papermariofont;
+    src: url('/assets/font/papermariofont.ttf') format('truetype');
+	font-style: normal;
+	font-display: swap; 
+}
+
+@font-face {
     font-family: regularfont;
     src: url('/assets/font/regularfont.ttf') format('truetype');
 	font-style: normal;
