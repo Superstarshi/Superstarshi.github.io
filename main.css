@@ -34,7 +34,7 @@ body {
     /* overflow: hidden; */
     text-align: center;
     margin: 0px; 
-    padding-bottom: 260px;
+    
 }
 
 
@@ -42,12 +42,14 @@ body {
     font-family: regularfont;
     color: white; 
     background-color: #6135f2; 
-    padding: 20px;
+    padding: 2em; 
     border-radius: 10px; 
     opacity: 1;
-    margin-right: 80px; 
+    margin-right: 5%; 
+    margin-bottom: 2em; 
     overflow-y: auto; 
-	
+    width: 90%; 
+    max-width: 600px; 
 }
 
 .text-box:last-child {
@@ -56,14 +58,25 @@ body {
 
 .text-box h2 {
     font-family: mariofont;
-    font-size: 40px;
+    font-size: 2.5em; 
     margin-top: 0;
-
 }
 
 .text-box p {
-    font-size: 20px;
+    font-size: 1.2em; 
     margin: 0;
+}
+
+@media (min-width: 768px) {
+    .text-box {
+        width: 45%; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .text-box {
+        width: 30%; 
+    }
 }
 
 
@@ -130,18 +143,20 @@ body {
 }
 
 .footer {
-    position: absolute;
+    position: bottom;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: #6135f2; 
     color: white;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 60px;
     font-family: regularfont;
     box-sizing: border-box; 
     padding-left: 60px;
     padding-right: 60px;
+	padding-top: 10px;
+
 
 }
 
