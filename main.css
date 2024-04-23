@@ -117,10 +117,10 @@ body {
 
 .pattern {
     position: absolute;
-    top: -200px;
+    top: -280px;
     left: 0;
     z-index: -1;
-    width: 100%; 
+    width: 2000px; 
     opacity: 0.8;
 	transform: translateZ(-5px) scale(1);
 	object-fit: cover;
