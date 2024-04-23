@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: regularfont;
-    src: url('/assets/font/HWYGOTH.ttf') format('truetype');
+    src: url('/assets/font/regularfont.ttf') format('truetype');
 	font-style: normal;
 	font-display: swap; 
 }
@@ -17,7 +17,7 @@ h1 {
 }
 
 h2 {
-    font-family: papermariofont;
+    font-family: regularfont;
 }
 
 body {
