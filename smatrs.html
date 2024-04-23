@@ -164,19 +164,20 @@
 	 <script>
         // Function called when the YouTube Iframe API is loaded
         function onYouTubeIframeAPIReady() {
-            // Create a new YouTube player
+            
             new YT.Player('trailervideo', {
-                height: '320', // Set the height of the player
-                width: '540', // Set the width of the player
-                videoId: '8xkJaXj0mXw?si=OepG92BIvoSIQ5Hm', // Replace VIDEO_ID_HERE with the ID of your YouTube video
+                height: '320',
+                width: '540', 
+                videoId: '8xkJaXj0mXw?si=OepG92BIvoSIQ5Hm', 
                 playerVars: {
-                    // Add any additional player parameters here
-                    autoplay: 0, // Set to 1 to autoplay the video
-                    controls: 0, // Show player controls
-                    modestbranding: 1 // Hide YouTube logo in the control bar
+               
+                    autoplay: 0, 
+                    controls: 1, 
+                    modestbranding: 0
+					
                 },
                 events: {
-                    // Add any event handlers here
+             
                 }
             });
         }
