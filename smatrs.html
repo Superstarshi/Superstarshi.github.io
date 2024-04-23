@@ -20,9 +20,7 @@
         <img src="assets/logo.png" class="logo" alt="Logo">
     </div>
 	
-    <div class="pattern">
-        <img src="assets/pattern2.png" class="pattern" alt="pattern">
-    </div>
+    <div class="pattern"></div>
 
 	
     <div class="container">
@@ -30,8 +28,9 @@
             <h2>About</h2>
 			<h3>--------------------------------------</h3>
             <p>Super Mario and the Rainbow Stars is a project that aims to bring the unique traits of the Paper Mario and Mario & Luigi series into a fun 2D platformer. Explore 7 different chapters, discover new partners and unique worlds, and stop Lord Dark Star's evil plans! Features: new moves, cutscenes, 3D world map, tons of powerups, a 3 hp life system, partner system, original songs and more!</p>
-			<img src="assets/img1.png" class="aboutimg">
-			<p>(this'll be some kind of gif, i guess)</p>
+            <a href="assets/img1.png" target="_blank">
+                <img src="assets/img1.png"  class="aboutimg" alt="gameplay">
+            </a>
         </div>
 
         <div class="text-box" id="story">
@@ -146,20 +145,15 @@
     </footer>
 </div>
 
-<script>
+    <script>
         const pattern = document.querySelector('.pattern');
 
         function handleScroll() {
             const scrollPosition = window.pageYOffset;
-            pattern.style.transform = `translateY(${scrollPosition * 0.6}px)`; 
+            pattern.style.transform = `translateY(${scrollPosition * 0.7}px)`; 
         }
 
         window.addEventListener('scroll', handleScroll);
-		
-</script>
-
-
-
-
-
+    </script>
+</body>
 </html>
