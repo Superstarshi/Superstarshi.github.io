@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: regularfont;
-    src: url('/assets/font/regularfont.ttf') format('truetype');
+    src: url('/assets/font/regularfont.TTF') format('truetype');
 	font-style: normal;
 	font-display: swap; 
 	font-weight: normal;
