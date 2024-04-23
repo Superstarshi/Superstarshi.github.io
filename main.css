@@ -6,8 +6,8 @@
 }
 
 @font-face {
-    font-family: papermariofont;
-    src: url('/assets/font/papermariofont.ttf') format('truetype');
+    font-family: regularfont;
+    src: url('/assets/font/HWYGOTH.ttf') format('truetype');
 	font-style: normal;
 	font-display: swap; 
 }
@@ -24,12 +24,12 @@ body {
     /* overflow: hidden; */
     text-align: center;
     margin: 0px; 
-    padding-bottom: 100px;
+    padding-bottom: 260px;
 }
 
 
 .text-box {
-    font-family: papermariofont;
+    font-family: regularfont;
     color: white; 
     background-color: #6135f2; 
     padding: 20px;
@@ -128,9 +128,54 @@ body {
     color: white;
     text-align: center;
     margin-top: 20px;
-    font-family: papermariofont;
+    font-family: regularfont;
     box-sizing: border-box; 
+    padding-left: 60px;
+    padding-right: 60px;
+
 }
+
+.social-icons {
+    margin-top: 0px;
+    display: inline-flex; 
+    align-items: center; 
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 20%; 
+    overflow: hidden;
+    transition: transform 0.5s; 
+    width: 34px; 
+    height: 34px; 
+}
+
+.social-icons a img {
+    width: 100%; 
+    height: auto; 
+}
+
+.social-icons a:hover {
+    transform: scale(1.1) rotate(2deg); /
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+}
+
+.starry-icon {
+    display: block;
+    margin-top: 20px; 
+    width: 50px; 
+    height: auto; 
+    margin-left: auto; 
+    margin-right: auto; 
+	margin-bottom: 20px;
+}
+
+
 
 
 body {
