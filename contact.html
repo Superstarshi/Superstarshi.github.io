@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Super Mario and the Rainbow Stars (Contact)</title>
+	<meta property="og:title" content="Super Mario and the Rainbow Stars (Demo)" />
+	<meta property="og:description" content="insert description hereeee" />
+	<meta property="og:url" content="https://superstarshi.github.io/smatrs" />
+
+	
+
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="main.css" />
+	<link rel="icon" type="image/png" href="assets/favicon.png">
+	
+	
+
+</head>
+
+<a href="smatrs.html" class="page-link">Home</a>
+<a href="news.html" class="page-link2">News</a>
+
+<body>
+    <div class="logo">
+
+    </div>
+	
+    <div class="pattern"></div>
+
+	
+    <div class="container">
+        <div class="text-box" id="about" data-parallax-speed="0.4">
+            <h2>Contact & Links</h2>
+			<h3>--------------------------------------</h3>
+			<p>Youtube: <a class="social-link" href="https://www.youtube.com/@Superstarshi" target="_blank">@Superstarshi</a></p>
+            <p>Twitter: <a class="social-link" href="https://twitter.com/Super_Starshi" target="_blank">@Super_Starshi</a></p>
+			<p>Discord: <a class="social-link" href="https://discord.gg/GBXUa7NF2J" target="_blank">discord.gg/GBXUa7NF2J</a></p>	
+			<p>SMBX Forums: <a class="social-link" href="https://www.smbxgame.com/forums/viewtopic.php?f=90&t=25690&p=378529" target="_blank">smbxgame.com</a></p>	
+			<p></p>
+
+        </div>
+
+    </div>
+	
+</body>
+ 
+
+	<div class="container">
+		<div class="sliding-background"></div>
+    </div>
+	
+	<!-- Vidyo -->
+	<video autoplay muted loop id="bg_video">
+	<source src="assets/bg_loop.mp4" type="video/mp4">
+	</video>
+	
+
+</body>	 
+
+<div class="footer2">
+    <footer>
+        <p>The Rainbow Stars Team and Super Mario and the Rainbow Stars are not affiliated with or endorsed by Nintendo. All related assets are property of Nintendo or their respective owners. Super Mario and the Rainbow Stars is a project that is strictly for free and anything sold for monetary gain is not endorsed by us.</p>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@Superstarshi" target="_blank">
+                <img src="assets/social1.png" alt="youtube">
+            </a>
+            <a href="https://twitter.com/Super_Starshi" target="_blank">
+                <img src="assets/social2.png" alt="twitter">
+            </a>
+            <a href="https://discord.gg/GBXUa7NF2J" target="_blank">
+                <img src="assets/social3.png" alt="discord">
+            </a>
+        </div>
+        <img src="assets/starry.gif" alt="Starry" class="starry-icon">
+    </footer>
+</div>
+
+  <script>
+        const pattern = document.querySelector('.pattern');
+
+        function handleScroll() {
+            const scrollPosition = window.pageYOffset;
+            pattern.style.transform = `translateY(${scrollPosition * 0.7}px)`; 
+        }
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
+
+</body>
+</html>
