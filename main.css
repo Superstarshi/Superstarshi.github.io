@@ -87,7 +87,7 @@ body {
         left: auto;
     }
     .page-link {
-        right: -25%; 
+        right: -23%; 
         left: auto; 
     }
 }
@@ -140,7 +140,7 @@ body {
 
 .char1 {
     position: relative;
-    top: -120px; 
+    top: -100%; 
     left: -32%;
     width: 250px; 
     height: 240px; 
@@ -152,8 +152,8 @@ body {
 
 .char2 {
     position: relative;
-    top: -410px; 
-    left: 33%;
+    top: -340%; 
+    left: 31%;
     width: 250px; 
     height: 240px; 
     z-index: 1; 
