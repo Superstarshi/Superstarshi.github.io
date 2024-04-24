@@ -152,8 +152,8 @@ body {
 
 .char2 {
     position: relative;
-    top: -340%; 
-    left: 31%;
+    top: -344%; 
+    left: 31.8%;
     width: 250px; 
     height: 240px; 
     z-index: 1; 
@@ -161,7 +161,7 @@ body {
 	margin-bottom: -280px;
 }
 
-@media (max-width: 1468px) {
+@media (max-width: 1268px) {
     .char2 {
         position: absolute;
         top: 13%;
@@ -200,17 +200,7 @@ body {
    
 }
 
-@media (min-width: 768px) {
-    .text-box {
-        width: 45%; 
-    }
-}
 
-@media (min-width: 1200px) {
-    .text-box {
-        width: 30%; 
-    }
-}
 
 
 #about, #story {
@@ -260,14 +250,14 @@ body {
     background-image: url("assets/banner.png");
     background-repeat: repeat-x;
     position: relative;
-    margin-top: -940px; /* Use negative margin instead of adjusting top */
+    margin-top: -940px; 
     left: 0;
     z-index: -1;
     width: 100%;
     height: 1000px;
     opacity: 0.6;
     transform: translateZ(-5px) scale(1);
-    transition: transform 0.1s ease-out; /* Adjust the duration (0.1s) as needed */
+    transition: transform 0.1s ease-out; 
     will-change: transform;
 }
 
@@ -329,14 +319,14 @@ body {
 }
 
 .footer2 {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: #6135f2; 
     color: white;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 120px;
     font-family: regularfont;
     box-sizing: border-box; 
     padding-left: 60px;
@@ -344,6 +334,8 @@ body {
 	padding-top: 10px;
     background-image: url('assets/pattern3.png'); 
 }
+
+
 
 
 .social-icons {
