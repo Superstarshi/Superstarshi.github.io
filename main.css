@@ -37,6 +37,11 @@ body {
     
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .page-link {
     font-family: mariofont;
     position: absolute;
@@ -83,6 +88,7 @@ body {
 .social.link:hover {
     text-decoration: underline; 
 }
+
 
 
 .text-box {
