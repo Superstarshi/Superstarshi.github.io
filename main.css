@@ -37,12 +37,13 @@ body {
     
 }
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
+/* html, body { */
+    /* max-width: 100%; */
+    /* overflow-x: hidden; */
+/* } */
 
-.page-link {
+.page-link,
+.page-link3 {
     font-family: mariofont;
     position: absolute;
     top: 20px;
@@ -56,10 +57,14 @@ html, body {
     z-index: 999;
 }
 
-.page-link:hover {
+.page-link:hover ,
+.page-link2:hover ,
+.page-link3:hover ,
+.page-link4:hover {
     background-image: url('assets/pattern3.png');
 }
 
+.page-link4,
 .page-link2 {
     font-family: mariofont;
     position: absolute;
@@ -73,6 +78,32 @@ html, body {
     border: 2px solid white;
     z-index: 999;
 }
+
+
+
+@media (max-width: 1268px) {
+    .page-link2 {
+        right: -34%; 
+        left: auto;
+    }
+    .page-link {
+        right: -25%; 
+        left: auto; 
+    }
+}
+
+@media (max-width: 1268px) {
+    .page-link4 {
+        right: 9%; 
+        left: auto; 
+    }
+    .page-link3 {
+        right: 1%; 
+        left: auto; 
+    }
+}
+
+
 
 .page-link2:hover {
     background-image: url('assets/pattern3.png');
@@ -110,7 +141,7 @@ html, body {
 .char1 {
     position: relative;
     top: -120px; 
-    left: -300px;
+    left: -32%;
     width: 250px; 
     height: 240px; 
     z-index: 1; 
@@ -121,8 +152,8 @@ html, body {
 
 .char2 {
     position: relative;
-    top: -420px; 
-    left: 300px;
+    top: -410px; 
+    left: 33%;
     width: 250px; 
     height: 240px; 
     z-index: 1; 
@@ -436,6 +467,7 @@ body {
 .logo {
     position: relative;
     top: -0px;
+
     opacity: 0;
     animation: slideInAndFadeIn 1.2s forwards, moveUpDown 3.8s 6s infinite ease-in-out;
 	width: 800px;
