@@ -159,8 +159,17 @@ body {
     z-index: 1; 
     transform: rotate(2deg); 
 	margin-bottom: -280px;
-
 }
+
+@media (max-width: 1468px) {
+    .char2 {
+        position: absolute;
+        top: 13%;
+        left: 108%;
+        transform: translateX(-50%);
+    }
+}
+
 
 .char3 {
     position: relative;
