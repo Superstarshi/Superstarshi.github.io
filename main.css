@@ -140,8 +140,8 @@ body {
 
 .char1 {
     position: relative;
-    top: -100%; 
-    left: -32%;
+    top: -100px; 
+    left: -300px;
     width: 250px; 
     height: 240px; 
     z-index: 1; 
@@ -152,8 +152,8 @@ body {
 
 .char2 {
     position: relative;
-    top: -344%; 
-    left: 31.8%;
+    top: -420px; 
+    left: 300px;
     width: 250px; 
     height: 240px; 
     z-index: 1; 
