@@ -13,6 +13,18 @@
     <link rel="stylesheet" href="main.css" />
 	<link rel="icon" type="image/png" href="assets/favicon.png">
 	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+.mySlides {
+    width: 100%;
+    border: 4px solid white; 
+    border-bottom-width: 8px; 
+}
+</style>
+	
 </head>
      <header>
         <div class="header-content">
@@ -36,11 +48,54 @@
    <div class="logo">
         <img src="assets/logo.png" class="logo" alt="Logo">
     </div>
-
-    <main>
+ <main>
         <div class="container">
-            
+            <div class="text-box" id="about">
+                <h2>About</h2>
+				<p>Super Mario and the Rainbow Stars is a project that aims to bring the unique traits of the Paper Mario and Mario & Luigi series into a fun 2D platformer. Explore 7 different chapters, discover new partners and unique worlds, and stop Lord Dark Star's evil plans!</p>
+				<p>Features: New moves, cutscenes, 3D world map, tons of powerups, a 3 hp life system, partner system, original songs and more!</p>
+				<a href="assets/gameplay.gif" target="_blank">
+                <img src="assets/gameplay.gif"  class="aboutimg" alt="gameplay">
+            </a>
+            </div>
+        
+            <div class="text-box" id="story">
+             <h2>Story</h2>
+			<p>One day, the Mario Bros were hanging out near their house until they suddenly received a letter from Peach. They've been invited for the Star Festival! Before that festival starts, they're planning to take a trip with a hot air balloon. Things turn out for the worse once something goes wrong...</p>	
+			<p>Everyone gets scattered, and now it's up to Mario to find his friends, as well as retrieve the Rainbow Stars, which were scattered by the newly awakened Dark Star. Mario must get these Rainbow Stars before the Dark Star, otherwise the plan of plunging the world into darkness might succeed... Thankfully Mario will be accompanied by many different partners alongside his journey.</p>
+			<p>From a star kid to a ghostly spirit, and from a blooper pirate to the dark star itself, safe to say Mario will encounter many unique friends and foes on his adventure! This adventure will take you through the archipelago where Yoshis reside, an abstract forest inhabited by many different ghosts, a sky island which holds all 4 seasons at once and more!</p>
+
+            </div>
         </div>
+		
+		<div class="container">
+            <div class="text-box" id="screenshots">
+                <h2>Screenshots</h2>
+                <p></p>
+		<div class="w3-content w3-display-container" style="max-width:800px">
+			<img class="mySlides" src="assets/img1.png" style="width:100%">
+			<img class="mySlides" src="assets/img2.png" style="width:100%">
+			<img class="mySlides" src="assets/img3.png" style="width:100%">
+			<img class="mySlides" src="assets/img4.png" style="width:100%">
+			<img class="mySlides" src="assets/img5.png" style="width:100%">
+			<img class="mySlides" src="assets/img6.png" style="width:100%">
+			<img class="mySlides" src="assets/img7.png" style="width:100%">
+			<img class="mySlides" src="assets/img8.png" style="width:100%">
+		<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+		<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+		<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(6)"></span>
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(7)"></span>
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(8)"></span>
+  </div>
+</div>		
+        </div>
+	
     </main>
 
     <footer class="footer">
@@ -58,5 +113,36 @@
         </div>
         <img src="assets/starry.gif" alt="Starry" class="starry-icon">
     </footer>
+	
+	
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
 </body>
-</html>
+</html> 
