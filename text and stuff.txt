@@ -1,0 +1,41 @@
+Home - Download - FAQ - Credits
+
+Home:
+- About
+- Story
+- Screenshots
+- Link to download
+
+Download:
+- Installation
+In order to play, you will need to install SMBX2 beta 5 first. You can find that -here-.
+Go through that installation process, and afterwards you can install SMATRS.
+Extract the ZIP file into data/worlds of SMBX2. 
+Afterwards, open SMBX2 and you should get a view of the episode list. SMATRS should now be on that list.
+Select it, and then simply click on Play. The game should now open!
+
+Tips:
+Resizing the game window is recommended, as it defaults to SMBX's original resolution.
+On the episode list, there is a trophy icon at the bottom left. Clicking on it will show achievements you can unlock!
+You can easily change controls within SMATRS, by going into settings.
+
+- Download Link
+Version 1.0.0
+Download size: __mb
+
+FAQ:
+What exactly is this fangame?
+A 2D platformer with elements from the Mario RPGs.
+
+Is Mario the only playable character?
+Yes. But the game does have segments where you play as others, akin to Paper Mario. 
+
+Will there be multiplayer?
+Not in the current demo, though maybe sometime in the future.
+
+For any other questions, join the SMATRS discord.
+(LINK)
+
+Credits:
+yeah,
+
