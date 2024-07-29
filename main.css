@@ -22,7 +22,7 @@
 	font-weight: normal;
 }
 
-h1 {
+h1,h3 {
     font-family: mariofont;
 }
 
@@ -32,23 +32,65 @@ h2 {
 
 
 
-#installation, #download {
+#installation{
 	text-align: center; 
 	margin-top: 60px;
+	width: 800px; 
 
 }
 
+#download {
+	text-align: center; 
+	margin-top: 60px;
+	 width: 600px; 
+
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('assets/site_bg.png'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+	
+}
+
+
 .link {
-    font-weight: bold; /* Maak de tekst vetgedrukt, zoals <strong> */
-    color: white; /* Zorg ervoor dat de link wit is */
-    text-decoration: none; /* Verwijder de onderstreping van de link */
+    font-weight: bold; 
+    color: white; 
+    text-decoration: none;
 }
 
 .link:hover {
-    color: white; /* Zorg ervoor dat de link wit blijft bij hover */
-    text-decoration: underline; /* Voeg onderstreping toe bij hover */
+    color: white; 
+    text-decoration: underline; 
 }
 
+.text-box h2 {
+    font-family: mariofont;
+    font-size: 2.5em; 
+    margin-top: 0;
+}
+
+.text-box h3 {
+    font-family: mariofont;
+    font-size: 1.5em; 
+    margin-top: 0;
+}
+
+.text-box p {
+    font-size: 1em; 
+   
+}
 
 
 .text-box {
@@ -56,20 +98,20 @@ h2 {
     font-family: regularfont;
     color: white; 
     padding: 1em; 
+	margin: 20px;
     border-radius: 10px; 
-    opacity: 0.8;
     overflow-y: auto; 
-    width: 90%; 
-    max-width: 600px;
+
     /* background-image: url('assets/pattern.png');  */
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.6);
     border-bottom: 6px solid white; 
 }
 
 .container {
     display: flex;
     justify-content: center; 
-    align-items: flex-start;
+    /* align-items: flex-start; */
+	align-items: flex-start;
 	gap: 20px; 
 }
 
@@ -78,14 +120,14 @@ h2 {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #6135f2; 
     color: white;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: regularfont;
     box-sizing: border-box; 
     padding: 4px 30px;
     /* background-image: url('assets/pattern3.png');  */
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.6);
+	
 }
 
 .social-icons {
@@ -171,13 +213,32 @@ body {
 }
 
 header {
-    background-color: #333;
-	opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    padding: 10px 0;
+    padding: 10px 20px;
 }
 
+.header-content {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
 
+.header-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+}
+
+.logo-img {
+    height: 40px; 
+    margin-right: 10px; 
+}
+
+.logo-text {
+    font-size: 20px;
+    color: white; 
+}
 
 nav {
     display: flex;
@@ -204,7 +265,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #575757;
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 4px;
 }
 
