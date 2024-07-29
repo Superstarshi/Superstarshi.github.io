@@ -46,6 +46,27 @@ h2 {
 
 }
 
+
+
+.download-box {
+    position: relative;
+    font-family: regularfont;
+    color: white;
+    padding: 4px;
+	padding-top: 16px;
+    border-radius: 10px;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+
+	margin: auto;
+}
+
+#download-box {
+	text-align: center; 
+	margin-top: 0px;
+	 width: 200px; 
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -104,18 +125,6 @@ body {
     font-family: regularfont;
 }
 
-header {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 10px 20px;
-}
-
-header .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 main {
     flex: 1;
     padding: 20px;
@@ -132,6 +141,9 @@ main {
     background-color: rgba(0, 0, 0, 0.6);
     border-bottom: 6px solid white;
 }
+
+
+
 
 .container {
     display: flex;
