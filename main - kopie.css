@@ -322,6 +322,14 @@ body {
     padding-right: 60px;
 	padding-top: 10px;
     background-image: url('assets/pattern3.png'); 
+	  height: 2.5rem; 
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
 }
 
 .footer2 {
