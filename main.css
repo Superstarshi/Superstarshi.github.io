@@ -34,7 +34,6 @@ h2 {
 
 
 
-
 #installation{
 	text-align: center; 
 	margin-top: 30px;
@@ -292,13 +291,14 @@ header {
     padding: 10px 20px;
 }
 
-
+header .header-content {
+    font-family: regularfont;
+}
 
 .header-content {
     display: flex;
     align-items: center; 
     justify-content: space-between; 
-	
 }
 
 .header-logo {
