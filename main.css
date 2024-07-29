@@ -34,14 +34,14 @@ h2 {
 
 #installation{
 	text-align: center; 
-	margin-top: 60px;
+	margin-top: 30px;
 	width: 800px; 
 
 }
 
 #download {
 	text-align: center; 
-	margin-top: 60px;
+	margin-top: 30px;
 	 width: 600px; 
 
 }
@@ -126,7 +126,7 @@ main {
     font-family: regularfont;
     color: white;
     padding: 1em;
-    margin: 10px;
+    margin: 15px;
     border-radius: 10px;
     overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.6);
