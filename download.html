@@ -6,27 +6,35 @@
     <meta property="og:description" content="insert description hereeee" />
     <meta property="og:url" content="https://superstarshi.github.io/smatrs" />
     <meta property="og:image" content="https://i.postimg.cc/C1qXV4rx/mario-icon.png">
+
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <link rel="stylesheet" href="main.css" />
     <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
-<body>
-    <header>
-        <div class="header-content">
-            <a href="smatrs.html" class="header-logo">
-                <img src="assets/header_logo.png" alt="Logo" class="logo-img">
-                <span class="logo-text">Super Mario and the Rainbow Stars</span>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="smatrs.html">Home</a></li>
-                    <li><a href="download.html">Download</a></li>
-                    <li><a href="#FAQ">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
+<body class="download-page">
+<header>
+    <div class="header-content">
+        <a href="smatrs.html" class="header-logo">
+            <img src="assets/header_logo.png" alt="Logo" class="logo-img">
+            <span class="logo-text">Super Mario and the Rainbow Stars</span>
+        </a>
+        <nav>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="nav-bar"></span>
+                <span class="nav-bar"></span>
+                <span class="nav-bar"></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <!-- don't forget to remove the '.html' later -->
+                <li><a href="smatrs.html">Home</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="#FAQ">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <main>
         <div class="container">
@@ -49,6 +57,8 @@
                 <h2>Download</h2>
                 <p>Version 1.0.0</p>
                 <p>Download size: 300 MB</p>
+                <p>Demo length: around 2-3 Hours</p>
+                <p>All credits can be found in the _credits file.</p>
 				<div class="download-box" id="download-box">
                 <h3><strong><a href="https://youtu.be/6281evD-RY4?si=jZGS5SmgfxLL_b-_" class="link" target="_blank">Download Here!</a></strong></h3>
 				 </div>
@@ -75,4 +85,16 @@
         <img src="assets/starry.gif" alt="Starry" class="starry-icon">
     </footer>
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>
+
 </html>
