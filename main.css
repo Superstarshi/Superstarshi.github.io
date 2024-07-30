@@ -203,6 +203,7 @@ body.home-page {
     background-position: center; 
     background-repeat: no-repeat; 
     background-attachment: fixed; 
+
 }
 
 body.download-page {
@@ -212,6 +213,18 @@ body.download-page {
     background-repeat: no-repeat; 
     background-attachment: fixed; 
 }
+@media (max-width: 768px) {
+    body.home-page {
+        background-image: url('assets/site_bg.png'); 
+        background-attachment: scroll; 
+    }
+
+    body.download-page {
+        background-image: url('assets/site_bg2.png');
+        background-attachment: scroll; 
+    }
+}
+
 
 
 
@@ -244,19 +257,6 @@ body.download-page {
    
 }
 
-
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-image: url('assets/site_bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: regularfont;
-}
 
 main {
     flex: 1;
