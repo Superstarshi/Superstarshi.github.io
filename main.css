@@ -445,6 +445,10 @@ header .header-content {
 
 }
 
+html {
+   -webkit-tap-highlight-color: transparent;
+}
+
 .logo-img {
 
     height: 40px; 
@@ -490,9 +494,11 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 4px;
 }
+
+
 
 
 .nav-toggle {
@@ -521,6 +527,7 @@ nav ul li a:hover {
     padding: 0;
     position: relative; 
 }
+
 @media (max-width: 768px) {
     nav {
         margin-right: 0;
