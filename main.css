@@ -89,7 +89,28 @@ h2 {
     }
 }
 
-#story {
+#faq {
+    text-align: center; 
+	margin-top: 30px;
+	 width: 800px; 
+
+}
+
+#contact {
+    text-align: center; 
+	margin-top: 30px;
+	 width: 600px; 
+
+}
+
+#changelog {
+    text-align: center; 
+	margin-top: 30px;
+	 width: 600px; 
+
+}
+
+#versions {
     text-align: center; 
 	margin-top: 30px;
 	 width: 600px; 
@@ -266,6 +287,17 @@ main {
     box-sizing: border-box;
     padding: 4px 30px;
     background-color: rgba(0, 0, 0, 0.6);
+}
+
+.social-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+.social.link:hover {
+    text-decoration: underline; 
 }
 
 
