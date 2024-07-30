@@ -238,7 +238,6 @@ html, body {
 
 @media (max-width: 768px) {
 	.site-bg {
-		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -249,7 +248,6 @@ html, body {
 		background-attachment: scroll;
 	}
 	.site-bg2 {
-		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
