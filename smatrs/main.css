@@ -1,6 +1,6 @@
 @font-face {
     font-family: mariofont;
-    src: url('/assets/font/mariofont.ttf') format('truetype');
+    src: url('/smatrs/assets/font/mariofont.ttf') format('truetype');
 	font-style: normal;
 	font-display: swap; 
 	font-weight: normal;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: papermariofont;
-    src: url('/assets/font/papermariofont.ttf') format('truetype');
+    src: url('/smatrs/assets/font/papermariofont.ttf') format('truetype');
 	font-style: normal;
 	font-display: swap; 
 	font-weight: normal;
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: regularfont;
-    src: url('/assets/font/regularfont.TTF') format('truetype');
+    src: url('/smatrs/assets/font/regularfont.TTF') format('truetype');
 	font-style: normal;
 	font-display: swap; 
 	font-weight: normal;
