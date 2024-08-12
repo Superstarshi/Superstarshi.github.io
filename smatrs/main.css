@@ -176,8 +176,8 @@ h2 {
     position: relative;
     font-family: regularfont;
     color: white;
-    padding: 4px;
-	padding-top: 16px;
+    padding: 0px;
+	padding-top: 24px;
     border-radius: 10px;
     overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.6);
@@ -188,7 +188,7 @@ h2 {
 #download-box {
 	text-align: center; 
 	margin-top: 0px;
-	 width: 260px; 
+	 width: 280px; 
 }
 
 html, body {
