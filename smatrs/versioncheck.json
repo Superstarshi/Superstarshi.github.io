@@ -20,6 +20,9 @@
         "(2.0.0.b5.4.2)"
     ],
     "updater-version": [
-        [[1, 0, 0],true]
+        [[1, 0, 0], true]
+    ],
+    "self-updater-version": [
+        [[1, 0, 0], true]
     ]
 }
