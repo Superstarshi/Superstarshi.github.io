@@ -6,9 +6,17 @@ import os
 import messagebox
 
 def updateSMBX(filename):
+    windowObj.labelString = "Downloading current SMBX patch"
+
     downloadSMBXPatcher(filename)
 
+    windowObj.loadPercent = 80
+    windowObj.labelString = "Running patcher"
+
     os.startfile(filename)
+
+    windowObj.loadPercent = 90
+    windowObj.labelString = "Waiting until patch is complete"
 
     waitUntilPatchComplete(10,18)
 
@@ -18,6 +26,7 @@ def updateSMBX(filename):
     # If the latest patch included an update to the SMBX Launcher itself,
     if os.path.exists(xtwo) and os.path.exists(rstars):
         print("Found SMBX2.exe and SMATRS Launcher.exe")
+        windowObj.labelString = "Cleanup pass"
 
         # Remove the old SMATRS Launcher
         os.remove(rstars)
@@ -50,6 +59,8 @@ def waitUntilPatchComplete(querytime, cancelafter=-1):
         # Wait for things to settle (might be unnecessary, but not taking risks)
         print(f"Found SMBX game.ini {smbxVer} matching cloud")
         print(f"Waiting {querytime*2} seconds as a safety measure...")
+
+        windowObj.labelString = "Running safety check"
 
         time.sleep(querytime*2)
 
