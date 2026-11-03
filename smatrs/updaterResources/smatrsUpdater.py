@@ -2,12 +2,13 @@ import os
 import json
 import shutil
 
-import tkinter as tk
-from tkinter import ttk, messagebox
+import messagebox
 
 import urllib.request
 import webbrowser
+
 import gdown
+from mega_client import MegaClient
 
 import threading
 from zipfile import ZipFile
@@ -110,14 +111,14 @@ class SmatrsUpdater:
             print(f'    ...\\{os.path.basename(s)}')
         return saveFiles
     
-    def moveFiles(self,filepathsToMove,directoryMoveTo):
+    def moveFiles(self, filepathsToMove, directoryMoveTo, isBackup=False):
         if not isinstance(filepathsToMove,list):
             filepathsToMove = [filepathsToMove]
 
         finishedPaths = []
 
         # Move shit out the way if we've already failed mid-update before
-        if os.path.exists(directoryMoveTo):
+        if os.path.exists(directoryMoveTo) and isBackup:
             backup = f"{directoryMoveTo}-backup"
             if os.path.exists(backup):
                 send2trash.send2trash(backup)
@@ -170,12 +171,17 @@ class SmatrsUpdater:
             print("Found valid launcher as",filename)
             foundEXE = True
 
+            windowObj.loadPercent = 35
+            windowObj.labelString = "Finding SMATRS"
+
             candidateEpisodes = self.getEpisodeFolders(self.directory)
 
             for episode in candidateEpisodes:
                 if self.version == None or getModule("universals")["versionIsNewer"](episode["version"], self.version):
                     self.episodePath = episode["path"]
                     self.version = episode["version"]
+
+        windowObj.loadPercent = 40
         
         if not foundEXE:
             getModule("universals")["throwError"]("noEXE")
@@ -207,9 +213,24 @@ class SmatrsUpdater:
                 messagebox.showinfo("Redundant Folders Successfully Removed",f"Cleanup success! The following directories have been removed:\n\n{deletedDirectories}")
 
 
+    def deleteZip(self, zip):
+        try:
+            send2trash.send2trash(zip)
+        except Exception as e:
+            print(f"Failed to move zip to trash. Error log:\n\n{e}")
+            try:
+                os.remove(zip)
+            except Exception as ex:
+                print(f"Failed to remove zip. Error log:\n\n{ex}\n\nAbandoning attempts to delete zip")
+
+
+
 
     def gameUpdate(self):
         cloudVersion = self.findURLData("current-version")
+
+        windowObj.loadPercent = 45
+        windowObj.labelString = "Finding cloud version"
 
         # If the version on cloud is newer than the version on local,
         if getModule("universals")["versionIsNewer"](cloudVersion,self.version):
@@ -237,17 +258,22 @@ class SmatrsUpdater:
         # Find saves
         self.saves = self.findSaveFiles(self.episodePath)
 
-        # Find the URL to download from
-        episodeURL = self.findURLData("google-drive-url")
-        
-        # Download the zip from google drive
-        updateFile = self.getZip(episodeURL)
+        windowObj.loadPercent = 50
+        windowObj.labelString = "Downloading SMATRS update"
+
+        # Get the zip
+        updateFile = self.attemptFindAndDownload()
+
+        windowObj.loadPercent = 55
+        windowObj.labelString = "Storing saves"
 
         # Move the save files from the outdated directory to a temporary safekeeping directory
-        self.saves = self.moveFiles(self.saves,tempDirectoryPath)
+        self.saves = self.moveFiles(self.saves,tempDirectoryPath,True)
 
         # Trash the outdated directory
         send2trash.send2trash(self.episodePath)
+
+        windowObj.labelString = "Unzipping"
 
         # Unzip the new version and place it in the data\worlds\ folder
         try:
@@ -258,21 +284,23 @@ class SmatrsUpdater:
             print(str(e))
             getModule("universals")["throwError"]("unzipError",updateFile)
 
+        windowObj.loadPercent = 60
+        windowObj.labelString = "Reinitializing variables"
+
         # Find the new version, since it may be different from the old version
         self.findEpisode()
+
+        windowObj.labelString = "Restoring saves"
 
         # Move the saves into the new folder
         self.saves = self.moveFiles(self.saves,self.episodePath)
 
+        windowObj.loadPercent = 65
+        windowObj.labelString = "Cleanup pass"
+
         # Delete the temporary directory and downloaded zip
         shutil.rmtree(tempDirectoryPath)
-        try:
-            os.remove(updateFile)
-        except Exception as e:
-            try:
-                send2trash.send2trash()
-            except Exception as ex:
-                print(f"Failed to remove zip. Error log:\n\n{e}\n\n{ex}")
+        self.deleteZip(updateFile)
 
         # Done, I think...?
         messagebox.showinfo("Success!",f"SMATRS {self.versionName} has been successfully downloaded. You may want to empty your recycle bin.")
@@ -283,11 +311,13 @@ class SmatrsUpdater:
         if not doInstall:
             return
 
-        # Find the URL to download from
-        episodeURL = self.findURLData("google-drive-url")
-        
-        # Download the zip from google drive
-        updateFile = self.getZip(episodeURL)
+        windowObj.labelString = "Downloading SMATRS update"
+
+        # Get the zip
+        updateFile = self.attemptFindAndDownload()
+
+        windowObj.loadPercent = 55
+        windowObj.labelString = "Unzipping"
 
         # Unzip the new version and place it in the data\worlds\ folder
         try:
@@ -297,14 +327,16 @@ class SmatrsUpdater:
         except:
             getModule("universals")["throwError"]("unzipError",updateFile)
 
+        windowObj.loadPercent = 60
+        windowObj.labelString = "Reinitializing variables"
+
         # Find the install
         self.findEpisode()
 
+        windowObj.labelString = "Cleanup pass"
+
         # Delete the downloaded zip
-        try:
-            os.remove(updateFile)
-        except Exception as ex:
-            print(f"Failed to remove zip. Error log:\n{ex}")
+        self.deleteZip(updateFile)
 
         # Done
         messagebox.showinfo("Success!",f"SMATRS {self.versionName} has been successfully downloaded. Have fun playing!")
@@ -312,12 +344,16 @@ class SmatrsUpdater:
 
 
     def findURLData(self,key):
-        try:
-            smatrsSite = urllib.request.urlopen(getModule("universals")["versionURL"])
-        except:
+        smatrsSite = None
+        for t in range(3):
+            try:
+                smatrsSite = urllib.request.urlopen(getModule("universals")["versionURL"])
+                break
+            except:
+                print(f"Attempt {t+1} to parse cloud failed")
+        if smatrsSite == None:
             getModule("universals")["throwError"]("connectionError")
-            return
-        
+
 
         cloudJSON = smatrsSite.read()
 
@@ -336,7 +372,7 @@ class SmatrsUpdater:
 
         return cloudJSON[key]
 
-    def getZip(self,downloadURL,tries=3):
+    def getFromGoogleDrive(self,downloadURL,tries=3):
         # create variable for later
         update_file = None
 
@@ -344,16 +380,56 @@ class SmatrsUpdater:
 
         for t in range(tries):
             try:
-                print(f"    Attempt {t+1}/{tries}")
+                print(f"\tAttempt {t+1}/{tries}")
                 update_file = gdown.download(url=downloadURL,output=f"{self.directory}\\{getModule("universals")["updateZipFilename"]}")
-                print(f"\n        Attempt {t+1}/{tries} success")
+                print(f"\n\t\tAttempt {t+1}/{tries} success")
                 
                 return update_file
-            except Exception as err:
-                print(f"        Attempt {t+1}/{tries} failed; ", err)
+            except Exception as e:
+                print(f"\t\tAttempt {t+1}/{tries} failed; ", e)
                 continue
 
+        raise gdown.DownloadError('All attempts at downloading from Google Drive failed')
+
+    def getFromMEGA(self,downloadURL,tries=3):
+        update_file = None
+
+        print("Attempting download from MEGA")
+
+        for t in range(tries):
+            try:
+                print(f"\tAttempt {t+1}/{tries}")
+
+                with MegaClient() as client:
+                    update_file = client.download_file(downloadURL,f"{self.directory}\\{getModule("universals")["updateZipFilename"]}")
+
+                print(f"\t\tAttempt {t+1}/{tries} success")
+                return update_file.path
+            except Exception as e:
+                print(f"\t\tAttempt {t+1}/{tries} failed; ", e)
+                pass
+
         getModule("universals")["throwError"]("downloadFail")
+
+    def attemptFindAndDownload(self,tries=3):
+        updateFile = None
+        try:
+        # Try Google Drive first
+            # Find the URL to download from
+            episodeURL = self.findURLData("google-drive-url")
+            
+            # Download the zip from google drive
+            updateFile = self.getFromGoogleDrive(episodeURL,tries)
+        except Exception as e:
+        # if Google Drive bricked attempt MEGA download
+            print(e)
+
+            episodeURL = self.findURLData("mega-url")
+
+            updateFile = self.getFromMEGA(episodeURL,tries)
+            pass
+
+        return updateFile
 
 loadedModules["smatrsUpdater"] = {
     'SmatrsUpdater': SmatrsUpdater
