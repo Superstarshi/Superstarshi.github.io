@@ -1,7 +1,7 @@
 import os
 import sys
 
-from tkinter import messagebox
+import messagebox
 import urllib.request
 
 import json
@@ -18,9 +18,12 @@ validSaveFilenames = ["progress.json", ".sav","ext.dat"]
 
 versionURL = "https://superstarshi.github.io/smatrs/versioncheck.json"
 filesURL = "https://superstarshi.github.io/smatrs/updaterResources"
+scriptsURL = "https://raw.githubusercontent.com/Superstarshi/superstarshi.github.io/refs/heads/main/smatrs/updaterResources/"
 updateZipFilename = "download.zip"
 
 everythingUpdated = True
+doingString = ""
+
 
 
 
@@ -168,8 +171,11 @@ tryLoadCloudJSON()
 loadedModules["universals"] = {
     'validLauncherNames': validLauncherNames,
     'validSaveFilenames': validSaveFilenames,
+
     'versionURL': versionURL,
     'filesURL': filesURL,
+    'scriptsURL': scriptsURL,
+
     'updateZipFilename': updateZipFilename,
 
     'CLOUD': CLOUD,
