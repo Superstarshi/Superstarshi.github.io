@@ -10,7 +10,7 @@
 #universals.tryLoadSMBXVersion()
 
 import os
-from tkinter import messagebox
+import messagebox
 
 # Modules sytem
 global loadedModules, __loadModuleFromContent, getModule
@@ -44,7 +44,10 @@ def getModule(name):
 if __name__ == "__main__":
     # Run all that's necessary
     # print(updaterDirectoryPath)
+    windowObj.loadPercent = 5
+    windowObj.labelString = "Loading resources"
     getModule("universals")
+    windowObj.loadPercent = 10
 
     # getModule("selfUpdater")
 
@@ -56,25 +59,39 @@ if __name__ == "__main__":
         loadedModules.pop("selfUpdater")
         pass
 
+    windowObj.loadPercent = 15
+
     if getModule("universals")["versionIsNewer"](getModule("universals")["CLOUD"]["smatrs-updater-version"], getModule("universals")["LOCAL"]["smatrs-updater-version"]):
         # smatrsUpdater updating
+        windowObj.loadPercent = 20
         getModule("selfUpdater")["updateFile"]("smatrsUpdater")
         pass
 
+    windowObj.loadPercent = 25
+
     if getModule("universals")["versionIsNewer"](getModule("universals")["CLOUD"]["smbx-version"], getModule("universals")["LOCAL"]["smbx-version"]):
         # smbxUpdater updating
+        windowObj.loadPercent = 30
         getModule("selfUpdater")["updateFile"]("smbxUpdater")
         pass
+
+    windowObj.loadPercent = 30
+    windowObj.labelString = "Initializing SMATRS update"
 
 
     # SMATRS Updater handles checking if it should update for us
     smatrsUpdater = getModule("smatrsUpdater")['SmatrsUpdater']()
     smatrsUpdater.attemptUpdate()
 
+    windowObj.loadPercent = 70
+    windowObj.labelString = "Checking SMBX update"
+
     if getModule("universals")["versionIsNewer"](getModule("universals")["CLOUD"]["smbx-version"], getModule("universals")["LOCAL"]["smbx-version"]):
         # running smbxUpdater
         getModule("smbxUpdater")["updateSMBX"]("patcher.exe")
 
+    windowObj.loadPercent = 100
+    windowObj.labelString = "Done!"
 
     # Done!
-    messagebox.showinfo("Way Past Cool!", "The updater has finished running! If everything was updated correctly, then your installation has been completely updated!\n\nYou can start the game by opening 'SMBX2.exe'. Have fun playing!")
+    messagebox.showinfo("Way Past Cool!", f"The updater has finished running! If everything was updated correctly, then your installation has been completely updated!\n\nYou can start the game by opening the SMATRS Launcher (or, if it's not there, by opening \"SMBX2\").\n\nHave fun playing!")
