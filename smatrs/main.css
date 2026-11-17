@@ -581,7 +581,22 @@ main {
 
 
 
+.smbx-button {
+    margin-top: 0px;
+    display: inline-flex; 
+    align-items: center; 
+}
 
+.smbx-button a {
+    display: inline-block;
+    margin-right: 10px;
+    overflow: hidden;
+    transition: transform 0.5s; 
+}
+
+.smbx-button a:hover {
+    transform: scale(1.1); /
+}
 
 
 .social-icons {
@@ -613,6 +628,8 @@ main {
     width: 40px;
     height: 40px;
 }
+
+
 
 .starry-icon {
     display: block;
